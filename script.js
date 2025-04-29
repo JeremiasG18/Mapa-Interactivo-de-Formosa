@@ -56,7 +56,6 @@ const informacion = [
 ];
 
 function mostrarInfo(informacion, departamento) {    
-
     for (let i = 0; i < informacion.length; i++) {
         if (departamento === informacion[i].id) {
             info.innerHTML = `
@@ -67,7 +66,22 @@ function mostrarInfo(informacion, departamento) {
             break;
         }
     }
+}
 
+function mostrarMapa(button){
+    if (mapa.querySelector('svg')) {
+        mapa.querySelector('svg').remove();
+    }
+    const divMapa = document.createElement('div');
+    divMapa.setAttribute('id', 'contentmapa');
+    const img = document.createElement('img');
+    img.src = 'img/' + button.dataset.url + '.png';
+    img.alt = 'Mapa de Geologia y Topologia';
+    if (mapa.querySelector('#contentmapa')) {
+        mapa.querySelector('#contentmapa').remove();
+    }
+    mapa.appendChild(divMapa);
+    divMapa.appendChild(img);
 }
 
 const info = document.querySelector('.info');
@@ -81,38 +95,15 @@ departamentos.forEach(departamento => {
 
 const mapa = document.querySelector('#mapa');
 
-const svg = document.querySelector('svg');
-const precipitaciones = document.querySelector('#precipitaciones');
-precipitaciones.addEventListener('click', () => {
-    svg.remove();
-    const img = document.createElement('img');
-    const divMapa = document.createElement('div');
-    divMapa.setAttribute('id', 'contentmapa');
-    img.src = 'img/precipitaciones_balance_hidrico.png';
-    img.alt = 'Mapa de precipitaciones';
-    if (mapa.querySelector('#contentmapa')) {
-        mapa.querySelector('#contentmapa').remove();
-    }
-    mapa.appendChild(divMapa);
-    divMapa.appendChild(img);
-})
-
-const climasynucleos = document.querySelector('#climasynucleos');
-climasynucleos.addEventListener('click', () =>{
-    svg.remove();
-    const img = document.createElement('img');
-    const divMapa = document.createElement('div');
-    divMapa.setAttribute('id', 'contentmapa');
-    img.src = 'img/tipos_y_variedades_de_climas_y_nucleos_climaticos.png';
-    img.alt = 'Mapa de tipos y variedades de clima y nucleos climaticos';
-    if (mapa.querySelector('#contentmapa')) {
-        mapa.querySelector('#contentmapa').remove();
-    }
-    mapa.appendChild(divMapa);
-    divMapa.appendChild(img);
-});
-
 const mapaformosa = document.querySelector('#mapaformosa');
 mapaformosa.addEventListener('click', () =>{
     location.reload();
+});
+
+const buttons = document.querySelectorAll('.buttons');
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        console.log(button.dataset.url);
+        mostrarMapa(button);
+    });
 });
