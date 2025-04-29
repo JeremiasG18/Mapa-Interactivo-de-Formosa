@@ -1,0 +1,83 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: hsl(70deg 33.33% 92.94%);
+}
+
+#mapa {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+#mapa svg {
+  width: 100%;
+  height: 100%;
+}
+/* .zona {
+  fill: transparent;
+  stroke: #000;
+  stroke-width: 1;
+  cursor: pointer;
+}
+.zona:hover {
+  fill: rgba(0, 150, 255, 0.2);
+}
+*/
+
+
+.info{
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  height: 300px;
+  background-color: #ddd;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px 1px #444;
+}
+
+
+[id="RAMON LISTA"]{
+  fill: hsl(253.13deg 34.78% 81.96%);
+}
+
+#MATACOS{
+  fill: hsl(128.57deg 36.84% 85.1%);
+}
+
+#PATINO{
+  fill: hsl(8.57deg 85.37% 83.92%);
+}
+
+#BERMEJO{
+  fill: hsl(50.6deg 85.57% 80.98%);
+}
+
+#PILCOMAYO{
+  fill: hsl(356.57deg 100% 86.27%);
+}
+
+#FORMOSA{
+  fill: hsl(50.93deg 86% 80.39%);
+}
+
+#LAISHI{
+  fill: hsl(254deg 31.25% 81.18%);
+}
+
+#PIRANE{
+  fill: hsl(128.57deg 35.9% 84.71%);
+}
+
+#PILAGAS{
+  fill: hsl(328.7deg 48.94% 81.57%);
+}
